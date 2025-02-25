@@ -1,0 +1,29 @@
+        table.tabular-alt
+        {
+            text-align: center;
+            width: 80%;
+        }
+        table.tabular-alt tr.alt
+        {
+            background-color: whiteSmoke;
+        }
+        table.tabular-alt thead tr
+        {
+           
+            color: #CCCCCC;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        table.tabular-alt tr
+        {
+            background-color: gainsboro;
+        }
+        .tabular-alt tbody tr td div
+        {
+            margin-left: 100px;
+        }
+        .tabular-alt
+        {
+            color: #000000;
+        }

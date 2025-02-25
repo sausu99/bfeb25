@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOW Entertainment App | Eodbox - Bid & Win | BSNL Mobile </title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Google Play Store URLs
+            const androidDeepLink = "market://details?id=com.pkg.videostreaming"; // Deep link for Play Store
+            const androidWebLink = "https://play.google.com/store/apps/details?id=com.pkg.videostreaming"; // Web link fallback
+
+            // Apple App Store URL
+            const iosUrl = "itms-apps://apps.apple.com/gb/app/wow-the-entertainment-hub/id1645032861";
+
+            // Countdown initialization
+            const countdownElement = document.getElementById('countdown');
+            let countdown = 15; // 30 seconds delay
+
+            const interval = setInterval(() => {
+                countdown--;
+                countdownElement.textContent = countdown;
+
+                if (countdown <= 0) {
+                    clearInterval(interval);
+
+                    // Detect user agent
+                    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                    if (/android/i.test(userAgent)) {
+                        // Redirect to the Play Store deep link
+                        window.location.href = androidDeepLink;
+
+                        // Fallback to web Play Store URL if deep link fails
+                        setTimeout(function () {
+                            window.location.href = androidWebLink;
+                        }, 1000);
+                    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                        // Redirect to Apple App Store App
+                        window.location.href = iosUrl;
+                    } else {
+                        // Fallback for unsupported devices or desktop
+                        document.getElementById("message").textContent = "Please visit this page on a mobile device.";
+                    }
+                }
+            }, 1000); // Update every second
+        });
+    </script>
+    <style>
+        div.gallery {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        
+        div.gallery:hover {
+          border: 1px solid #777;
+        }
+        
+        div.gallery img {
+          width: 100%;
+          height: auto;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+        
+        div.desc {
+          padding: 15px;
+          text-align: center;
+          font-weight: 700;
+        }
+        
+        * {
+          box-sizing: border-box;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .responsive {
+          padding: 0 6px;
+          float: left;
+          width: 24.99999%;
+        }
+        
+        @media only screen and (max-width: 700px) {
+          .responsive {
+            width: 49.99999%;
+            margin: 6px 0;
+          }
+        }
+        
+        @media only screen and (max-width: 500px) {
+          .responsive {
+            width: 100%;
+          }
+        }
+        
+        .clearfix:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        h2 {
+            text-align: center;
+            background-color: aquamarine;
+            padding: 10px 0px 10px 0px;
+            border-radius: 5px;
+        }
+        h4 {
+            text-align: center;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .block {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #07a028;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .block:hover {
+            background-color: #04AA6D;
+            color: black;
+        }
+        span {
+            color: red;
+        }
+        
+        </style>
+</head>
+<body>
+    <section>
+        <div>
+            <img src="assets/BSNL WOW LOGO-01.jpg" alt="wow logo" style="width: 10%;" class="center" >     
+        </div>
+    </section>
+    <div style="text-align: center; margin-top: 50px;">
+        <h1>Sit Tight, we are taking you to WOW Entertainment App Store...</h1>
+        <p>Redirecting in <span id="countdown">15</span> seconds...</p>
+        <p id="message">If you are not redirected automatically, please use the appropriate store link below:</p>
+        <p>
+            <a href="market://details?id=com.pkg.videostreaming">Google Play Store</a> |
+            <a href="itms-apps://apps.apple.com/gb/app/wow-the-entertainment-hub/id1645032861">Apple App Store</a>
+        </p>
+    </div>
+    <section>
+        <div>
+            <h2>
+                Win Daily Luxury Items - Just BID and WIN at <a href="https://www.eodbox.com">eodbox.com</a> 
+            </h2>
+            <h4>
+                BSNL customers will get 50% off on First Purchase of Bid Credits, use code: <b style="color: red;">HAPPYNEWYEAR</b>
+            </h4>
+            <a href="https://www.youtube.com/watch?v=t6q605b9SEo">
+                <img src="assets/BidnWin.webp" alt="Bid & Win" style=" width: 50%; " class="center">
+            </a>
+        </div>
+        <br>
+        <div class="responsive">
+            <div class="gallery">
+              <a target="_blank" href="assets/Iphone.webp">
+                <img src="assets/Iphone.webp" alt="Cinque Terre" width="600" height="400">
+              </a>
+              <div class="desc">iPhone 15</div>
+            </div>
+          </div>
+          
+          
+          <div class="responsive">
+            <div class="gallery">
+              <a target="_blank" href="assets/Airdopes.webp">
+                <img src="assets/Airdopes.webp" alt="Forest" width="600" height="400">
+              </a>
+              <div class="desc">Boat Airdopes 171</div>
+            </div>
+          </div>
+          
+          <div class="responsive">
+            <div class="gallery">
+              <a target="_blank" href="assets/Amazon.webp">
+                <img src="assets/Amazon.webp" alt="Northern Lights" width="600" height="400">
+              </a>
+              <div class="desc">Rs. 500 Amazon Gift Voucher</div>
+            </div>
+          </div>
+          
+          <div class="responsive">
+            <div class="gallery">
+              <a target="_blank" href="assets/Fastrack.webp">
+                <img src="assets/Fastrack.webp" alt="Mountains" width="600" height="400">
+              </a>
+              <div class="desc">Fastrack Smart Watch</div>
+            </div>
+          </div>
+          
+          <div class="clearfix"></div>
+          
+          <div style="padding:6px;">
+            <p><b><u>HOW IT WORKS</u></b></p>
+            <p>
+                <ul>
+                    The most important step for participation is user registration. Only registered users can participate in the bid. For registration click on the login option and user either the social media options to automatically create account with eodbox. You can use Facebook or Google accounts to directly create account and login. This saves you from the hassle of creating account based on Mobile number, email and then remembering the password. 
+                </ul>
+                <ul>
+                    Though if you still wish to create account, you can do so by visiting Sign Up option.
+                </ul>
+                <ul>
+                    Post Social login, you will be taken to your accounts page and then you need to scroll down to enter your Mobile number, Verify it with OTP which will be send on the mobile number used by you for registration.
+                </ul>
+                <ul>
+                    After successful registration of Mobile number, you will be asked to confirm you other details. All fields with (*) are mandatory fields which you needs to enter.
+                </ul>
+                <ul>
+                    Once you have saved your profile information, you can visit Home page to select the listing of your choice and place you Bids.
+                </ul>
+            </p>
+            <a href="https://www.eodbox.com">
+                <button type="button" class="block">Bid Now</button>
+            </a>
+          </div>
+    </section>
+    <section>
+        <!-- Start: Footer Clean -->
+        <footer class="footer-clean" style="background: rgb(3,7,30);color: rgb(143,143,143);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- Start: Services -->
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">BSNL-WOW Entertainment APP</a></li>
+                            <li><a href="#">Customer Loyalty Program</a></li>
+                            <li><a href="#">Paisa Vasool Offer</a></li>
+                        </ul>
+                    </div><!-- End: Services -->
+                    <!-- Start: About -->
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div><!-- End: About -->
+                    <!-- Start: Careers -->
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="#">Support for WOW App</a></li>
+                            <li><a href="#">Support for Paisa Vasool Offer</a></li>
+                            <li><a href="#">Business Enquiry</a></li>
+                        </ul>
+                    </div><!-- End: Careers -->
+                    <!-- Start: Social Icons -->
+                    <div class="col-lg-3 item social"><a href="https://www.facebook.com/TheWOWway"><i class="icon ion-social-facebook"></i></a>
+                        <p class="copyright">Lokdhun Telemedia Pvt. Ltd. © 2021</p>
+                    </div><!-- End: Social Icons -->
+                </div>
+            </div>
+        </footer><!-- End: Footer Clean -->
+    </section>
+</body>
+</html>

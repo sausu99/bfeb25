@@ -1,0 +1,43 @@
+RewriteEngine on
+
+#Disable directory Listing
+Options -Indexes
+
+#php_value short_open_tag 1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+#rewrite www to non-www
+#RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#rewrite non-www to www
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule (.*) https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+#ExpiresActive On
+#<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|swf)$">
+#ExpiresDefault "access plus 10 days"
+#</FilesMatch>
+
+
+#Enable Compression
+#AddOutputFilterByType DEFLATE text/plain
+#AddOutputFilterByType DEFLATE text/html
+#AddOutputFilterByType DEFLATE text/xml
+#AddOutputFilterByType DEFLATE text/css
+#AddOutputFilterByType DEFLATE application/xml
+#AddOutputFilterByType DEFLATE application/xhtml+xml
+#AddOutputFilterByType DEFLATE application/rss+xml
+#AddOutputFilterByType DEFLATE application/javascript
+#AddOutputFilterByType DEFLATE application/x-javascript 
+
+
+#Error page
+ErrorDocument 301 /error/page/e404
+ErrorDocument 403 /error/page/e404
+ErrorDocument 404 /error/page/e404
+IndexOptions FancyIndexing
